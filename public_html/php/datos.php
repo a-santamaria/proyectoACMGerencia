@@ -1,11 +1,11 @@
 <?php
-$con=mysqli_connect("orion.javeriana.edu.co","ACMGerencia06","IVw9Mrato3","ACMGerencia06");
+$con=mysqli_connect("localhost","root","","acmgerencia00");
 if (mysqli_connect_errno())
         {
           echo "Failed to connect to MySQL: " . mysqli_connect_error();
         }
 
-	
+
 ?>
 <?php
 	session_start();
@@ -30,7 +30,7 @@ if (mysqli_connect_errno())
 	while ($fila = $resultado->fetch_assoc()) {
 	echo " <tr><td> " . $fila['Nombre'] . "</td>";
 	echo " <td>" . $fila['Apellidos'] . "</td>";
-	echo " <td>" . $fila['FechaNac'] . "</td>";	
+	echo " <td>" . $fila['FechaNac'] . "</td>";
 	echo " <td>" . $fila['Tipodocumento'] . "</td>";
 	echo " <td> " . $fila['Documento'] . "</td>";
 	echo " <td> " . $fila['Genero'] . "</td>";
@@ -39,15 +39,15 @@ if (mysqli_connect_errno())
 	echo " <td> " . $fila['Entidad'] . "</td>";
 	echo " <td> " . $fila['TipoAsistente'] . "</td>";
 	echo " <td> " . $fila['Otromotivo'] . "</td></tr>";
-	} 
+	}
 	echo "</table>";
 	echo "<form name=\"log\" action=\"borrar.php\" method=\"POST\">";
 	echo "<input type=\"submit\" value=\"Log out\" >";
 	echo "</form>";
 	}
 	else
-	{	
+	{
 		 header('Location: admin.php');
-		
+
 	}
 ?>
